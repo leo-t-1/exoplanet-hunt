@@ -6,3 +6,4 @@ data/toi.csv
 data/confirmed.csv
 *.fits
 .DS_Store
+.claude/
