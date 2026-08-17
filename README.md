@@ -63,3 +63,24 @@ curl -s "https://archive.stsci.edu/missions/tess/download_scripts/sector/tesscur
 
 Data: NASA TESS mission via MAST; TOI catalog via ExoFOP-TESS; confirmed
 planets via the NASA Exoplanet Archive.
+
+## Results — first sweep (2026-08-17)
+
+400 unflagged M/K dwarfs from sector 104 searched:
+
+- 292 no signal
+- 52 rejected as eclipsing binaries (secondary eclipse or odd/even depth)
+- 56 raw BLS detections → physical vetting (duty cycle, grid edge,
+  phase-0.5 anomaly, cross-star systematics) → **7 candidates**, none of
+  which appears in the TOI list, the CTOI community list, or the
+  confirmed-planet table
+- TLS refinement: all 7 land at SDE 5.1–6.8 with FAP 1–9 % — **below the
+  credible-candidate bar (SDE ≥ 9, FAP < 10⁻³)**. Single-sector verdict:
+  no secure new candidate; two marginal watchlist objects
+  (TIC 260817968: P = 1.26 d, ~3.4 R⊕; TIC 87329149: P = 3.34 d, ~1.9 R⊕)
+  `followup.py` finds neither has archival SPOC sectors (104 is their first 2-min coverage), so both remain unresolved until TESS revisits.
+
+Environment notes (macOS / Python 3.13): `sitecustomize.py` in the venv
+forces the setuptools distutils shim (batman needs it); TLS spawns
+multiprocessing workers, so every entry script keeps its body under
+`if __name__ == "__main__"`.
