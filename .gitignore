@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+data/lc_cache/
+data/sector104_lc.sh
+data/toi.csv
+data/confirmed.csv
+*.fits
+.DS_Store

@@ -1,0 +1,6 @@
+lightkurve
+transitleastsquares
+astroquery
+pandas
+matplotlib
+setuptools
