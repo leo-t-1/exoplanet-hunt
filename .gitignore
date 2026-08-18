@@ -7,3 +7,4 @@ data/confirmed.csv
 *.fits
 .DS_Store
 .claude/
+data/ctoi.csv
